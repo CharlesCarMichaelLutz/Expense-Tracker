@@ -1,42 +1,55 @@
+const expenseDate = document.getElementById("date");
+const expenseDescription = document.getElementById("description");
+const expenseLocation = document.getElementById("location");
+const expenseAmount = document.getElementById("amount");
 
-function init(){
-  const addExpenseButton = document.getElementById("submit");
-  addExpenseButton.onclick = getData;
+const form = document.getElementById("form");
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+
+  const newExpense = {
+    date: expenseDate.value,
+    description: expenseDescription.value,
+    location: expenseLocation.value,
+    amount: expenseAmount.value
+  };
+
+  getData(newExpense);
+
+});
+
+function getData(expense){
+  const newTableRow = document.createElement("tr");
+  document.getElementById("body").appendChild(newTableRow); 
+
+  const dateCell = createCell(expense.date);
+  newTableRow.appendChild(dateCell);
+
+  const descriptionCell = createCell(expense.description);
+  newTableRow.appendChild(descriptionCell);
+
+  const locationCell = createCell(expense.location);
+  newTableRow.appendChild(locationCell);
+
+  const amountCell = createCell(expense.amount);
+  newTableRow.appendChild(amountCell);
+
+  deleteRow(newTableRow);
 }
 
-function getData(){
-  const entry = document.getElementById("form");
-  let text = "";
-  for(var i = 0; i < entry.length-1; i++) {
-    text += entry.elements[i].value + " ";
-  }
-  document.getElementById("body").innerText = text;
-  
-  //document.getElementById("body").insertrow(node);
-  //const node = document.createElement("tr");
-  //node.innerText = text;
+function createCell(expense) {
+  const dataCell = document.createElement("td");
+  dataCell.textContent = expense;
+  return dataCell;
 }
 
-/*
-function insertRow(){
-    const table = document.getElementById("myTable");
-    const row = table.insertRow(1);
-    const cell = row.insertcell(0);
-        cell.textContent = "New Row";
+function deleteRow() {
+    const newTd = document.createElement("td");
+    document.getElementById("body").appendChild(newTd);
+    const deleteButton = document.createElement("button");
+    deleteButton.innerText = "X";
+    form.addEventListener("onlick", button);
 }
-
-function getExpense() {
-  const line = document.getElementById("body");
-
-  const row = document.createElement("tr");
-
-  //const text = document.getElementById("description").value;
-      row.textContent = text;  
-
-  document.line.insertRow(row); 
-}
-*/
-window.onload = init;
 
 
 //add click event listener to submit button

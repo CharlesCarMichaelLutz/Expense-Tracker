@@ -23,33 +23,42 @@ function getData(expense){
   document.getElementById("body").appendChild(newTableRow); 
 
   const dateCell = createCell(expense.date);
-  newTableRow.appendChild(dateCell);
+      newTableRow.appendChild(dateCell);
 
   const descriptionCell = createCell(expense.description);
-  newTableRow.appendChild(descriptionCell);
+      newTableRow.appendChild(descriptionCell);
 
   const locationCell = createCell(expense.location);
-  newTableRow.appendChild(locationCell);
+      newTableRow.appendChild(locationCell);
 
   const amountCell = createCell(expense.amount);
-  newTableRow.appendChild(amountCell);
+      newTableRow.appendChild(amountCell);
+  
+  const deleteCell = document.createElement("td");
+      newTableRow.appendChild(deleteCell);
 
-  deleteRow(newTableRow);
+  const deleteButton = document.createElement("button");
+      deleteButton.innerText = "X";
+      deleteCell.appendChild(deleteButton);
+
+  deleteButton.addEventListener("click", () => 
+  handleRemove(newTableRow));
+  
 }
-
+  
 function createCell(expense) {
   const dataCell = document.createElement("td");
-  dataCell.textContent = expense;
-  return dataCell;
+    dataCell.textContent = expense;
+    return dataCell;
 }
 
-function deleteRow() {
-    const newTd = document.createElement("td");
-    document.getElementById("body").appendChild(newTd);
-    const deleteButton = document.createElement("button");
-    deleteButton.innerText = "X";
-    form.addEventListener("onlick", button);
+
+function handleRemove(newTableRow) {
+  
+       const deleteRow = document.getElementById("tr");
+        deleteRow.parentElement.removeChild(newTableRow);
 }
+
 
 
 //add click event listener to submit button

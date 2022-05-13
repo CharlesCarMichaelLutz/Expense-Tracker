@@ -40,9 +40,14 @@ function getData(expense){
   const deleteButton = document.createElement("button");
       deleteButton.innerText = "X";
       deleteCell.appendChild(deleteButton);
+      deleteButton.classList.add("delete");
 
-  deleteButton.addEventListener("click", () => 
-  handleRemove(newTableRow));
+  deleteButton.addEventListener("click", (e) => {
+      const button = e.target;
+      const buttonParent = button.parentElement;
+      const buttonGrandParent = buttonParent.parentElement;
+      buttonGrandParent.parentElement.removeChild(buttonGrandParent);
+  });
   
 }
   
@@ -51,31 +56,6 @@ function createCell(expense) {
     dataCell.textContent = expense;
     return dataCell;
 }
-
-
-function handleRemove(newTableRow) {
-  
-       const deleteRow = document.getElementById("tr");
-        deleteRow.parentElement.removeChild(newTableRow);
-}
-
-
-
-//add click event listener to submit button
- //when submit button clicked
-  //1.create a row in the table
-  //2.create date element
-  //3.create descritpion element
-  //4.create location element
-  //5.create amount element
-  //6.display four items in the table row 
-
-
-//add click event listener to each expense item
- //when delete button clicked
-  //1.delete a row in the table
-  //2.all data gets deleted from row 
-     // upon clicking delete button
 
 
  

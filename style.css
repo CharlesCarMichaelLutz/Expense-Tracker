@@ -1,14 +1,16 @@
-h2{
+h1{
   text-align: center;
+  font-size: xx-large;
 }
 
 body{
-  color:#ff8533
+  color:black;
+  background-color: #4682B4;
 }
 
 table {
   border-collapse: collapse;
-  width: 75% 
+  width: 90% 
 }
 
 td, th {
@@ -16,3 +18,39 @@ td, th {
   text-align: left;
   padding: 8px;
 }
+
+.delete {
+  background-color: black;
+  font-size: 3px;
+  padding: 3px;
+  color:lightseagreen;
+  font-size:medium; 
+}
+
+.container {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: lightseagreen;
+  font-size: large;
+  box-sizing: border-box;
+  display: flex;
+}
+
+.label{
+  color:black;
+}
+
+.center{
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#myTable tr:nth-child(even){background-color: lightgray;}
+
+#myTable th{
+  background-color: lightskyblue;
+  color: black;
+}
+
+

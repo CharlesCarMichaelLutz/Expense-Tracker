@@ -48,6 +48,8 @@ function getData(expense){
       const buttonGrandParent = buttonParent.parentElement;
       buttonGrandParent.parentElement.removeChild(buttonGrandParent);
   });
+
+  resetInputs();
   
 }
   
@@ -57,5 +59,6 @@ function createCell(expense) {
     return dataCell;
 }
 
-
- 
+function resetInputs() {
+    document.getElementById("form").reset();
+}

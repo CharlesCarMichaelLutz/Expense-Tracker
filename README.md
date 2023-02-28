@@ -18,4 +18,4 @@ positioned on the page helped me further to manipulate them within JavaScript, a
 was a fun experience and I learned a great deal by implementation.
 
 ### Author
-* __Charles Lutz__ - *Full-Stack Software Developer* - [Personal Website](under construction) | [LinkedIn](www.linkedin.com/in/CharlesCarMichaelLutz)
+* __Charles Lutz__ - *Full-Stack Software Developer* - [Personal Website](https://master--resplendent-cocada-4ee40d.netlify.app/) | [LinkedIn](www.linkedin.com/in/CharlesCarMichaelLutz)

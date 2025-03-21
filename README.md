@@ -2,7 +2,7 @@
 
 An application written in JavaScript, CSS, and HTML which allows the user to enter and remove an expense, and is displayed in a table.  
 
-#### check it out [here](https://charles-carm.github.io/Expense-Tracker/)
+#### check it out [here](https://charlescarmichaellutz.github.io/Expense-Tracker/)
 ---
 
 ![expense](https://user-images.githubusercontent.com/103493003/168405629-dbda1736-db58-497d-9146-5f2b885675f3.PNG)
